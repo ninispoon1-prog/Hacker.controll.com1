@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SECRET COMPUTER // V9.7</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================================================
+         GLOBAL SCREEN EFFECTS
+    ================================================== -->
+
+    <div class="crt"></div>
+    <div class="noise"></div>
+    <div class="vignette"></div>
+
+    <!-- ==================================================
+         LOGIN
+    ================================================== -->
+
+    <section id="login">
+
+        <div class="boot-lines" id="bootLines"></div>
+
+        <div class="login-box">
+
+            <div class="machine-label">
+
+                <span>SC-09</span>
+
+                <span>CLASSIFIED</span>
+
+            </div>
+
+            <div class="secret-title">
+
+                SECRET COMPUTER
+
+            </div>
+
+            <div class="version">
+
+                VERSION 9.7 // RESTRICTED ACCESS
+
+            </div>
+
+            <div class="red-warning">
+
+                ⚠ UNAUTHORIZED ACCESS PROHIBITED
+
+            </div>
+
+            <div class="login-screen">
+
+                <div class="target">
+
+                    ◉
+
+                </div>
+
+                <div class="access-title">
+
+                    ACCESS TERMINAL
+
+                </div>
+
+                <div class="access-sub">
+
+                    IDENTIFICATION REQUIRED
+
+                </div>
+
+
+                <label>USERNAME</label>
+
+                <input
+                    id="username"
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+
+
+                <label>ACCESS KEY</label>
+
+                <input
+                    id="password"
+                    type="password"
+                    autocomplete="off"
+                >
+
+
+                <button id="loginButton">
+
+                    ENTER SYSTEM
+
+                </button>
+
+
+                <div id="loginStatus">
+
+                    WAITING FOR CREDENTIALS...
+
+                </div>
+
+            </div>
+
+            <div class="machine-footer">
+
+                <span>ANALOG SECURITY CORE</span>
+
+                <span>NODE 07</span>
+
+                <span class="status-light"></span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         WELCOME TRANSITION
+    ================================================== -->
+
+    <section id="welcome" class="hidden">
+
+        <div class="welcome-grid"></div>
+
+        <div class="welcome-small">
+
+            AUTHENTICATION ACCEPTED
+
+        </div>
+
+        <div class="welcome-main">
+
+            WELCOME BACK
+
+        </div>
+
+        <div class="welcome-user">
+
+            KEVO
+
+        </div>
+
+        <div class="welcome-line"></div>
+
+        <div class="welcome-loading">
+
+            INITIALIZING SECRET COMPUTER...
+
+        </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         MAIN SYSTEM
+    ================================================== -->
+
+    <main id="system" class="hidden">
+
+
+        <!-- ================= TOP BAR ================= -->
+
+        <header class="top">
+
+            <div class="brand">
+
+                <div class="brand-symbol">
+                    ◈
+                </div>
+
+                <div>
+
+                    <strong>
+                        SECRET COMPUTER
+                    </strong>
+
+                    <small>
+                        VERSION 9.7 // CONTROL INTERFACE
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="classification">
+
+                <span class="blink-dot"></span>
+
+                CLASSIFIED NETWORK
+
+            </div>
+
+
+            <div class="top-center">
+
+                SYSTEM STATUS
+
+                <strong>
+                    OPERATIONAL
+                </strong>
+
+            </div>
+
+
+            <div id="clock">
+                00:00:00
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <div class="dashboard">
+
+
+            <!-- ================= LEFT ================= -->
+
+            <aside class="left-column">
+
+
+                <!-- SYSTEM STATUS -->
+
+                <div class="panel status-panel">
+
+                    <div class="panel-head">
+
+                        <span>01</span>
+
+                        SYSTEM STATUS
+
+                        <b>LIVE</b>
+
+                    </div>
+
+
+                    <div class="status-big">
+
+                        <div class="status-circle">
+
+                            <span></span>
+
+                            ONLINE
+
+                        </div>
+
+
+                        <div class="status-text">
+
+                            <strong>
+                                SECURE NODE
+                            </strong>
+
+                            <small>
+                                CHANNEL ESTABLISHED
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="mini-stats">
+
+                        <div>
+
+                            <small>CPU</small>
+
+                            <strong id="cpu">
+                                47%
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <small>RAM</small>
+
+                            <strong id="ram">
+                                62%
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <small>NET</small>
+
+                            <strong>
+                                98%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BINARY STREAM -->
+
+                <div class="panel binary-panel">
+
+                    <div class="panel-head">
+
+                        <span>02</span>
+
+                        DATA STREAM
+
+                        <b>STREAMING</b>
+
+                    </div>
+
+                    <div
+                        id="binaryStream"
+                        class="binary-stream"
+                    ></div>
+
+                </div>
+
+
+                <!-- RADAR -->
+
+                <div class="panel radar-panel">
+
+                    <div class="panel-head">
+
+                        <span>03</span>
+
+                        SIGNAL RADAR
+
+                    </div>
+
+
+                    <div class="radar">
+
+                        <div class="radar-grid"></div>
+
+                        <div class="radar-sweep"></div>
+
+                        <i class="rd rd1"></i>
+                        <i class="rd rd2"></i>
+                        <i class="rd rd3"></i>
+
+                    </div>
+
+
+                    <div class="radar-info">
+
+                        <span>
+                            ACTIVE NODES
+                        </span>
+
+                        <strong>
+                            03
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </aside>
+
+
+            <!-- ================= CENTER ================= -->
+
+            <section class="center-column">
+
+
+                <!-- HERO -->
+
+                <div class="panel hero">
+
+                    <div>
+
+                        <span class="classified">
+                            // CLASSIFIED COMPUTER NETWORK
+                        </span>
+
+                        <h1>
+                            CONTROL
+                            <em>CENTER</em>
+                        </h1>
+
+                        <p>
+                            GLOBAL DEVICE MONITORING // TELEMETRY // NODE CONTROL
+                        </p>
+
+                    </div>
+
+
+                    <div class="hero-right">
+
+                        <span>
+                            SESSION
+                        </span>
+
+                        <strong>
+                            KEVO-07
+                        </strong>
+
+                        <small>
+                            ENCRYPTED
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GLOBE -->
+
+                <div class="panel globe-panel">
+
+                    <div class="panel-head">
+
+                        <span>04</span>
+
+                        GLOBAL DEVICE POSITION
+
+                        <b>
+                            TRACKING
+                        </b>
+
+                    </div>
+
+
+                    <div class="globe-area">
+
+                        <canvas id="globe"></canvas>
+
+
+                        <div class="globe-label">
+
+                            <div class="target-status">
+
+                                <span></span>
+
+                                TARGET LOCKED
+
+                            </div>
+
+
+                            <h2>
+                                HACKED DEVICE
+                            </h2>
+
+
+                            <p>
+                                REMOTE NODE // 07
+                            </p>
+
+
+                            <div class="coords">
+
+                                <div>
+
+                                    <small>LATITUDE</small>
+
+                                    <strong>
+                                        46.6713°
+                                    </strong>
+
+                                </div>
+
+                                <div>
+
+                                    <small>LONGITUDE</small>
+
+                                    <strong>
+                                        11.1525°
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="location">
+
+                                <span>
+                                    REGION
+                                </span>
+
+                                <strong>
+                                    MERANO REGION
+                                </strong>
+
+                            </div>
+
+
+                            <div class="connection">
+
+                                <span></span>
+
+                                DEVICE CONNECTION STABLE
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="orbit orbit-one"></div>
+                        <div class="orbit orbit-two"></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOWER TELEMETRY -->
+
+                <div class="bottom-grid">
+
+
+                    <div class="panel telemetry-panel">
+
+                        <div class="panel-head">
+
+                            <span>05</span>
+
+                            TELEMETRY
+
+                        </div>
+
+
+                        <div class="telemetry-grid">
+
+                            <div>
+
+                                <small>
+                                    PACKETS
+                                </small>
+
+                                <strong id="packets">
+                                    8,421
+                                </strong>
+
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    LATENCY
+                                </small>
+
+                                <strong id="latency">
+                                    18ms
+                                </strong>
+
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    SIGNAL
+                                </small>
+
+                                <strong>
+                                    98.7%
+                                </strong>
+
+                            </div>
+
+                            <div>
+
+                                <small>
+                                    UPTIME
+                                </small>
+
+                                <strong id="uptime">
+                                    00:00:00
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="panel event-panel">
+
+                        <div class="panel-head">
+
+                            <span>06</span>
+
+                            SYSTEM EVENTS
+
+                        </div>
+
+
+                        <div id="events"></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= RIGHT ================= -->
+
+            <aside class="right-column">
+
+
+                <!-- TERMINAL -->
+
+                <div class="panel terminal-panel">
+
+                    <div class="terminal-header">
+
+                        <div>
+
+                            <span>
+                                TERMINAL
+                            </span>
+
+                            <strong>
+                                COMMAND CONSOLE
+                            </strong>
+
+                        </div>
+
+                        <div class="terminal-lights">
+
+                            <i></i>
+                            <i></i>
+                            <i></i>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="terminal"
+                        class="terminal"
+                    >
+
+                        <div class="green">
+                            [SYSTEM] SECRET COMPUTER ONLINE
+                        </div>
+
+                        <div>
+                            [OK] SECURE CHANNEL INITIALIZED
+                        </div>
+
+                        <div>
+                            [OK] DEVICE LINK ESTABLISHED
+                        </div>
+
+                        <div>
+                            [OK] TELEMETRY STREAM ACTIVE
+                        </div>
+
+                        <div class="yellow">
+                            [INFO] TYPE HELP
+                        </div>
+
+                    </div>
+
+
+                    <div class="prompt">
+
+                        <span>
+                            KEVO@SC97:~$
+                        </span>
+
+                        <input
+                            id="command"
+                            autocomplete="off"
+                            spellcheck="false"
+                        >
+
+                        <i></i>
+
+                    </div>
+
+
+                    <div class="terminal-buttons">
+
+                        <button data-cmd="help">
+                            HELP
+                        </button>
+
+                        <button data-cmd="status">
+                            STATUS
+                        </button>
+
+                        <button data-cmd="scan">
+                            SCAN
+                        </button>
+
+                        <button data-cmd="device">
+                            DEVICE
+                        </button>
+
+                        <button data-cmd="location">
+                            LOCATION
+                        </button>
+
+                        <button data-cmd="clear">
+                            CLEAR
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NODE TABLE -->
+
+                <div class="panel nodes-panel">
+
+                    <div class="panel-head">
+
+                        <span>07</span>
+
+                        NETWORK NODES
+
+                        <b>
+                            03 ONLINE
+                        </b>
+
+                    </div>
+
+
+                    <div class="node">
+
+                        <span class="node-dot"></span>
+
+                        <div>
+                            <strong>
+                                ALPHA-01
+                            </strong>
+
+                            <small>
+                                SECURE CHANNEL
+                            </small>
+                        </div>
+
+                        <b>
+                            12ms
+                        </b>
+
+                    </div>
+
+
+                    <div class="node">
+
+                        <span class="node-dot"></span>
+
+                        <div>
+                            <strong>
+                                OMEGA-04
+                            </strong>
+
+                            <small>
+                                DATA RELAY
+                            </small>
+                        </div>
+
+                        <b>
+                            27ms
+                        </b>
+
+                    </div>
+
+
+                    <div class="node">
+
+                        <span class="node-dot red"></span>
+
+                        <div>
+                            <strong>
+                                GHOST-09
+                            </strong>
+
+                            <small>
+                                UNSTABLE
+                            </small>
+                        </div>
+
+                        <b>
+                            83ms
+                        </b>
+
+                    </div>
+
+                </div>
+
+
+                <!-- WARNING -->
+
+                <div class="panel warning-panel">
+
+                    <div class="warning-icon">
+                        ⚠
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            SECURITY NOTICE
+                        </strong>
+
+                        <p>
+                            ALL ACTIVITY IS BEING
+                            MONITORED BY THE
+                            CONTROL CORE.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </aside>
+
+
+        </div>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <span>
+                SECRET COMPUTER // V9.7
+            </span>
+
+            <span>
+                PRIVATE CONTROL NETWORK
+            </span>
+
+            <span>
+                SIMULATION MODE
+            </span>
+
+            <span>
+                <b></b>
+                SYSTEM ONLINE
+            </span>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
